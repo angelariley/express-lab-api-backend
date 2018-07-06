@@ -18,3 +18,11 @@ app.use(cors());
 app.listen(3000, ( ) => {
     console.log("WORKING 3K");
 })
+
+require('dotenv').config()
+
+app.set('port', process.env.PORT || 3000)
+
+app.listen(app.get('port'), () =>  {
+   console.log(`running on PORT:$ {app.get('port')}`)
+}); 
